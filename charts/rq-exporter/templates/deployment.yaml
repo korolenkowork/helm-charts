@@ -58,11 +58,11 @@ spec:
             - {{ .sentinel_master | quote }}
             - {{- end }}
             - {{- if $.Values.logging.level }}
-            - "-log-level"
+            - "--log-level"
             - {{ $.Values.logging.level | quote }}
             - {{- end }}
             - {{- if $.Values.logging.format }}
-            - "-log-format"
+            - "--log-format"
             - {{ $.Values.logging.format | quote }}
             - {{- end }}
           ports:
