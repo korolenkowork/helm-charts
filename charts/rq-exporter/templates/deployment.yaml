@@ -65,9 +65,13 @@ spec:
             - "--sentinel-master"
             - {{ .sentinel_master | quote }}
             - {{- end }}
-            - {{- if values.logging.level }}
+            - {{- if $.Values.logging.level }}
             - "-log-level"
-            - {{ values.logging.level }}
+            - {{ $.Values.logging.level }}
+            - {{- end }}
+            - {{- if $.Values.logging.format }}
+            - "-log-format"
+            - {{ $.Values.logging.format }}
             - {{- end }}
           ports:
             - name: http
