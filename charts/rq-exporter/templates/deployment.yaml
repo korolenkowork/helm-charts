@@ -51,7 +51,7 @@ spec:
             - {{- end }}
             - {{- if .sentinel_port }}
             - "--sentinel-port"
-            - {{ .sentinel_port | default 26379 | quote }}
+            - {{ .sentinel_port | quote }}
             - {{- end }}
             - {{- if .sentinel_master }}
             - "--sentinel-master"
