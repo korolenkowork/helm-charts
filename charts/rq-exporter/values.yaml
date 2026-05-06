@@ -113,9 +113,6 @@ rq: []
 #    host: localhost
 #    port: 6379
 #    index: 0
-#    # Optional: use one of password or passwordFile
-#    password: password
-#    passwordFile: /var/run/secrets/redis/password
 #    # Optional: Redis Sentinel support
 #    sentinel_host: sentinel.example
 #    sentinel_port: 26379
