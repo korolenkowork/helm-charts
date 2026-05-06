@@ -45,6 +45,30 @@ spec:
             - {{ .port | default 6379 | quote }}
             - "--redis-db"
             - {{ .index | default 0 | quote }}
+            - {{- if .password }}
+            - "--redis-password"
+            - {{ .password | quote }}
+            - {{- end }}
+            - {{- if .passwordFile | quote }}
+            - "--redis-password-file"
+            - {{ .passwordFile | quote }}
+            - {{- end }}
+            - {{- if .sentinel_host }}
+            - "--sentinel-host"
+            - {{ .sentinel_host | quote }}
+            - {{- end }}
+            - {{- if .sentinel_port }}
+            - "--sentinel-port"
+            - {{ .sentinel_port | default 26379 | quote }}
+            - {{- end }}
+            - {{- if .sentinel_master }}
+            - "--sentinel-master"
+            - {{ .sentinel_master | quote }}
+            - {{- end }}
+            - {{- if values.logging.level }}
+            - "-log-level"
+            - {{ values.logging.level }}
+            - {{- end }}
           ports:
             - name: http
               containerPort: 9726
