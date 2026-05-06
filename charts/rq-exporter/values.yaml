@@ -113,3 +113,12 @@ rq: []
 #    host: localhost
 #    port: 6379
 #    index: 0
+#    # Optional: Redis Sentinel support
+#    sentinel_host: sentinel.example
+#    sentinel_port: 26379
+#    sentinel_master: mymaster
+
+logging:
+  {}
+#  level: "INFO"
+#  format: "[%(asctime)s] [%(name)s] [%(levelname)s]: %(message)s"
